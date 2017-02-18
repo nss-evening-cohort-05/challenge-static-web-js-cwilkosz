@@ -1,33 +1,62 @@
 
-// 
-
-function growTree (inputInfo) {
+var button = document.getElementById("tree");
+var treeObj = {};
+function inputInfo(){
+  treeObj = {
+    treeHeight:document.getElementById("treeHeight").value,
+    treeChar:document.getElementById("treeChar").value
+  }
+  //console.log(treeObj)
+  growTree(treeObj)
+}
+function growTree (treeObj) {
+  //console.log("tree")
   //value from how tall
-  var treeHeight = document.getElementById("treeHeight").value;
+  //var treeHeight = document.getElementById("treeHeight").value;
   //value from character
-  var treeChar = document.getElementById("treeChar").value;
+  //var treeChar = document.getElementById("treeChar").value;
   //add space
   var growTree = "";
+  //console.log("treeHeight",inputInfo.treeHeight)
 
   
-     {for (var i =0; +<treeHeight.height; i ++)}
-     
-     {for (var j = 0; +<treeHeight.height - (i + 1); j++) 
-         growTree +=" ";}
+  for (var i =0; i <treeObj.treeHeight; i ++){
+    //console.log("inside1loop")
+    for (var j = 0; j<treeObj.treeHeight - (i + 1); j++){ 
+      growTree +=" ";
+    //  console.log("inside2nd4loop")
+    }
+
+    for (var t = 0; t <((i * 2)+ 1); t++){
+      growTree += treeObj.treeChar;//treechar goes here
+    }
+    growTree+="\n";
+    //console.log(growTree)made many trees
+  }
+
   
-     for (var t = 0; t ((i * 2)+ 1); t++)
-      growTree +="_";
+  console.log(growTree)
     
-   
-console.log(growTree)
-button.addEventListener("click", growTree);
+}  
 
-}
+//console.log(growTree)
+button.addEventListener("click", inputInfo);
+
+console.log(document)
+document.addEventListener('keyup',function(e){
+  if (e.keyCode ===13){
+      inputInfo()
+
+  }
+})
 
 
 
-
-
+//keyCode :===13 if (cipher_char === from_char)
+// //{
+//    result = result + to_char;
+//    x++;
+// } 
 
 
 // A key that specifies the height of the pine tree.
@@ -49,11 +78,11 @@ button.addEventListener("click", growTree);
 
 // for (var i =0; i<alphabet.length; i++){
 //     stackLetters += alphabet[i]
-//   	console.log( stackLetters) ;
-//   	if ((i + 1) % 3 === 0){
-//   		stackLetters +=" ";
+//    console.log( stackLetters) ;
+//    if ((i + 1) % 3 === 0){
+//      stackLetters +=" ";
 
-//   	}
+//    }
 
 // }
 //button.addEventListener("click");
